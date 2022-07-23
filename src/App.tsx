@@ -77,6 +77,7 @@ function App() {
         </div>
       </div>
       <div className="grid-area bottom-left">
+        {editing ? <div className="line"></div> : ""}
         {linesArray.map((_, i) => (
           <div key={i} className="line"></div>
         ))}
