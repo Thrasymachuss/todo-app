@@ -1,38 +1,140 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fffff1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.h1 {
+  font-size: min(2.25rem, 9vw);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn-wrap {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-end;
 }
 
-.App-link {
-  color: #61dafb;
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.grid-area {
+  width: 100%;
+}
+
+.top-left {
+  border-right: 1px solid tomato;
+  border-bottom: 1px solid blue;
+  display: none;
+}
+
+.top-right {
+  border-bottom: 1px solid blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 1.5rem;
+}
+
+.top-right .btn {
+  margin: 4px;
+  width: 100%;
+  font-size: min(1rem, 4vw);
+  min-height: 2rem;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.25s linear, color 0.25s linear;
+}
+
+.top-right .btn.create {
+  background-color: lightgreen;
+  border: 2px solid green;
+}
+
+.top-right .btn.create:hover {
+  background-color: green;
+  cursor: pointer;
+  color: #fff;
+}
+
+.top-right .btn.edit {
+  background-color: lightsalmon;
+  border: 2px solid orangered;
+}
+
+.top-right .btn.edit:hover {
+  background-color: orangered;
+  cursor: pointer;
+  color: #fff;
+}
+
+.bottom-left {
+  border-right: 1px solid tomato;
+  border-top: 1px solid blue;
+  display: none;
+}
+
+.bottom-right {
+  border-top: 1px solid blue;
+}
+
+.line {
+  min-height: 5rem;
+  padding-bottom: 2px;
+  border-bottom: 1px solid blue;
+  display: flex;
+  align-items: flex-end;
+}
+
+.edit-headers {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 1.5rem;
+}
+
+.edit-headers .title {
+  flex-shrink: 2;
+  width: 15rem;
+}
+
+.edit-headers .qty {
+  margin-right: 1rem;
+}
+
+.edit-headers div {
+  font-size: min(1.5rem, 5vw);
+}
+
+@media screen and (min-width: 600px) {
+  .app {
+    grid-template-columns: 100px auto;
+    grid-template-rows: 100px auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .btn-wrap {
+    flex-direction: row;
+    min-width: min(15rem, 34vw);
+  }
+
+  .top-left {
+    display: block;
+  }
+  .bottom-left {
+    display: block;
+  }
+
+  .top-right,
+  .bottom-right {
+    border-left: 1px solid tomato;
   }
 }

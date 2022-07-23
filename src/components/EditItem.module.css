@@ -1,0 +1,26 @@
+.edit-item-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 1.5rem;
+  width: 100%;
+}
+
+.edit-item-wrap input {
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  font-size: min(1.5rem, 5vw);
+}
+
+.edit-item-wrap button {
+  border: 0;
+  background-color: transparent;
+  font-size: 2rem;
+  color: red;
+  font-weight: 700;
+  margin-left: 8px;
+}
+
+.edit-item-wrap button:hover {
+  color: darkred;
+  cursor: pointer;
+}
