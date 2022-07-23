@@ -10,20 +10,24 @@ function App() {
   const [editing, setEditing] = useState(false);
 
   useEffect(() => {
-    const cookieItems = JSON.parse(getCookie("items"));
-    const cookieDate = Number(getCookie("date"));
-    const today = new Date();
-    if (cookieDate !== today.getDate()) {
-      const resetCookieItems = cookieItems.map((item: any) => {
-        return {
-          ...item,
-          checkboxes: item.checkboxes.map(() => false),
-          complete: false,
-        };
-      });
-      setItems(resetCookieItems);
-    } else {
-      setItems(cookieItems);
+    try {
+      const cookieItems = JSON.parse(getCookie("items"));
+      const cookieDate = Number(getCookie("date"));
+      const today = new Date();
+      if (cookieDate !== today.getDate()) {
+        const resetCookieItems = cookieItems.map((item: any) => {
+          return {
+            ...item,
+            checkboxes: item.checkboxes.map(() => false),
+            complete: false,
+          };
+        });
+        setItems(resetCookieItems);
+      } else {
+        setItems(cookieItems);
+      }
+    } catch (error) {
+      setItems([]);
     }
   }, []);
 
